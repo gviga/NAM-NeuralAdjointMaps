@@ -74,8 +74,8 @@ class NAMOptimizer:
             self.scheduler = lr_scheduler.CosineAnnealingLR(self.optimizer, **self.scheduler_params)
         elif self.scheduler_type == 'ReduceLROnPlateau':
             self.scheduler = lr_scheduler.ReduceLROnPlateau(self.optimizer, **self.scheduler_params)
-        else:
-            print(f"Scheduler type {self.scheduler_type} not recognized. No scheduler used.")
+        #else:
+            #print(f"Scheduler type {self.scheduler_type} not recognized. No scheduler used.")
 
     def optimize(self, x, y):
         """
@@ -115,11 +115,11 @@ class NAMOptimizer:
             else:
                 self.wait += 1
                 if self.wait >= self.patience:
-                    print(f"Early stopping at iteration {iter + 1}")
+                    #print(f"Early stopping at iteration {iter + 1}")
                     break
 
             # Print loss every 10 iterations
-            if iter % 10 == 0:
-                print(f"Iteration {iter + 1}/{self.n_iter}, Loss: {loss.item()}")
+            #if iter % 10 == 0:
+                #print(f"Iteration {iter + 1}/{self.n_iter}, Loss: {loss.item()}")
 
         return self.model
