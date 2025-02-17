@@ -3,7 +3,7 @@ from torch_cluster import nearest
 
 from model.neural_adjoint_map import *
 from model.optimizer import *
-from .sinkhorn_utils import Sinkhorn
+from ..utils.sinkhorn_utils import Sinkhorn
 
     
 

@@ -1,6 +1,6 @@
 import torch
 from torch_cluster import nearest
-from .sinkhorn_utils import Sinkhorn
+from ..utils.sinkhorn_utils import Sinkhorn
 
 def fsf(evecs1, evecs2, p2p, k_ini, k_end, step):
     p2p_zo=p2p
@@ -19,6 +19,7 @@ def fsf(evecs1, evecs2, p2p, k_ini, k_end, step):
     C21=torch.linalg.pinv(evec1)@P21[0]@evec2
     p2p_zo=nearest(evec1@C21,evec2)
     return p2p_zo
+
 #### zoomout and variants    --> ONLY INTRINSIC
 def zoomout(evecs1, evecs2, p2p, k_ini, k_end, step):
     p2p_zo=p2p
