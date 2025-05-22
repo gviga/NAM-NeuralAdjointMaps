@@ -1,55 +1,69 @@
 # NAM-NeuralAdjointMaps
 
 Official Repository for "NAM: Neural Adjoint Maps for refining shape correspondences"  
-Authors: Giulio Viganò, Maks Ovsjanikov, Simone Melzi
+Authors: Giulio Viganò, Maks Ovsjanikov, Simone Melzi.
 
 ## Overview
 
-This repository provides an implementation of Neural Adjoint Maps (NAM) for refining shape correspondences using deep learning. The codebase includes neural network models, optimization routines, and utilities for spectral shape matching.
+In this Repo, we imlement and show Neural Adjoint Maps, a new functional representation of correspondences between shapes.
 
 ## Directory Structure
-
-- `model/`  
-  Contains core model definitions, including the neural adjoint map ([`model/neural_adjoint_map.py`](model/neural_adjoint_map.py)), loss functions, and optimizers.
-- `methods/`  
-  Reference and baseline methods for shape matching.
-- `nam_utils/`  
-  Utility functions, e.g., Sinkhorn algorithm implementations.
-- `notebooks/`  
-  Example Jupyter notebooks demonstrating usage and experiments.
-- `README.md`  
-  This file.
+```
+NAM-NeuralAdjointMaps/
+├── model/
+│   ├── __init__.py
+│   ├── neural_adjoint_map.py
+│   ├── nueral_zoomout.py
+├── notebooks/
+│   ├── fmap_vs_NAM.ipynb
+│   ├── zoomout_vs_NZO.py  
+├── data/
+│   └── (sample data files)
+├── README.md
+├── requirements.txt
+└── LICENSE
+```
 
 ## Getting Started
 
-### Requirements
-
-- Python 3.8+
-- PyTorch
-- numpy
-- pyyaml
+Go to notebooks to see how to simply implements nam, compared to standard ZoomOut.
 
 Install dependencies with:
 
 ```sh
-pip install torch numpy pyyaml
+pip install pipreqs
+pipreqs /path/to/your/project
 ```
+
 
 ### Usage
 
 You can start by running the example notebooks in [`notebooks/`](notebooks/):
 
 ```sh
-jupyter notebook notebooks/notebook.ipynb
+jupyter notebook notebooks/fmap_vs_NAM.ipynb
 ```
 
-Or use the [`Neural_Adjoint_Map`](model/neural_adjoint_map.py) model directly in your code:
+Or use the NAM model and losses directly in your code:
 
 ```python
-from model.neural_adjoint_map import Neural_Adjoint_Map
+from model.neural_adjoint_map import NeuralAdjointMap
 
-model = Neural_Adjoint_Map(input_dim=128)
-output = model(input_tensor)
+
+emb1 = torch.tensor(eigvecs1).to(torch.float32).cuda() #embedding1
+emb2 = torch.tensor(eigvecs2).to(torch.float32).cuda() #embedding2
+
+#optimize NAM from p2p
+nam = NeuralAdjointMap(emb1, emb2)
+nam.optimize_from_p2p(p2p_gt)
+
+
+#compute p2p from nam
+emb2_nn = nam(emb2)
+knn = NearestNeighbors(n_neighbors=1, algorithm="auto").fit(eigvecs1)
+distances, indices = knn.kneighbors(emb2_nn.detach().cpu().numpy())
+
+p2p = indices.flatten()
 ```
 
 ## Citation
@@ -62,11 +76,6 @@ If you use this code, please cite:
   author={Viganò, Giulio and Ovsjanikov, Maks and Melzi, Simone},
   year={2024}
 }
-```
-
-## License
-
-[Specify your license here, e.g., MIT, GPL, etc.]
 
 ---
 
