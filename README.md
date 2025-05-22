@@ -6,7 +6,7 @@ Authors: Giulio Viganò, Maks Ovsjanikov, Simone Melzi.
 
 ## Overview
 
-In this Repo, we imlement and show Neural Adjoint Maps, a new functional representation of correspondences between shapes.
+In this Repo, we implement and show Neural Adjoint Maps, a new functional representation of correspondences between shapes. This Repository does not replicate the results of the papers; stay tuned for additional material.
 
 ## Directory Structure
 ```
@@ -27,7 +27,7 @@ NAM-NeuralAdjointMaps/
 
 ## Getting Started
 
-Go to notebooks to see how to simply implements nam, compared to standard ZoomOut.
+Go to notebooks to see how to implement nam, compared to standard fmaps approaches.
 
 Install dependencies with:
 
@@ -66,6 +66,15 @@ distances, indices = knn.kneighbors(emb2_nn.detach().cpu().numpy())
 
 p2p = indices.flatten()
 ```
+
+### Note
+This repo provides a simple implementation of NAM and Neural ZoomOut, it does not exactly replicate results from the original paper. In particular:
+- The nearest search here is computed in CPU via nearest neighbor, while in the paper, we used torch_cluster.nearest.
+- The zoomOut version used here is taken from the geomfum library (https://github.com/luisfpereira/geomfum/tree/main/geomfum), and it is not  GPU-accelerated.
+
+For further issues, please contact the authors.
+
+
 
 ## Citation
 
