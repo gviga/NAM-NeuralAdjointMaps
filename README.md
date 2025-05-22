@@ -1,4 +1,5 @@
 # NAM-NeuralAdjointMaps
+![graphical_abstract_1494](https://github.com/user-attachments/assets/f7ecd67d-4a1d-4aa2-8d5d-412534c86b8b)
 
 Official Repository for "NAM: Neural Adjoint Maps for refining shape correspondences"  
 Authors: Giulio Viganò, Maks Ovsjanikov, Simone Melzi.
