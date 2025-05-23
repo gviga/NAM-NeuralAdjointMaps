@@ -118,7 +118,7 @@ class NeuralAdjointMap(nn.Module):
         self.optimizer = optimizer
         self.model = model
 
-        if self.model == None:
+        if self.model is None:
             self.model = HybridModel(
                 input_dim=embedding2.shape[-1],
                 output_dim=embedding1.shape[-1],
@@ -127,7 +127,7 @@ class NeuralAdjointMap(nn.Module):
                 act=nn.LeakyReLU(),
             ).to(self.device)
 
-        if self.optimizer == None:
+        if self.optimizer is None:
             self.optimizer = torch.optim.Adam(self.model.parameters(), lr=1e-2)
 
         self.scheduler = torch.optim.lr_scheduler.StepLR(

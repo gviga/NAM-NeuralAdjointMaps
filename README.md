@@ -32,8 +32,7 @@ Go to notebooks to see how to implement nam, compared to standard fmaps approach
 Install dependencies with:
 
 ```sh
-pip install pipreqs
-pipreqs /path/to/your/project
+pip install -r requirements.txt
 ```
 
 
