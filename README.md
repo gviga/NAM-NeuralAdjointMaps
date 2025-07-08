@@ -8,6 +8,8 @@ Authors: Giulio Viganò, Maks Ovsjanikov, Simone Melzi.
 
 In this Repo, we implement and show Neural Adjoint Maps, a new functional representation of correspondences between shapes. This Repository does not replicate the results of the papers; stay tuned for additional material.
 
+You can find Nam implemented also in Geomfum package at https://github.com/DiG-AIR/geomfum.
+
 ## Directory Structure
 ```
 NAM-NeuralAdjointMaps/
