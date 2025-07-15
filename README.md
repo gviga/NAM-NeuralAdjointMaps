@@ -82,11 +82,18 @@ For further issues, please contact the authors.
 If you use this code, please cite:
 
 ```
-@article{vigano2024nam,
-  title={NAM: Neural Adjoint Maps for refining shape correspondences},
-  author={Viganò, Giulio and Ovsjanikov, Maks and Melzi, Simone},
-  year={2024}
-}
+
+@article{vigano2025nam,
+title = {NAM: Neural Adjoint Maps for refining shape correspondences},
+journal = {Transactions On Graphics},
+volume = {122},
+pages = {103985},
+year = {2024},
+issn = {0097-8493},
+doi = {https://doi.org/10.1145/3730943},
+url = {https://www.lix.polytechnique.fr/~maks/papers/NAM_SIGGRAPH2025.pdf},
+author = {Viganò, Giulio, Ovsjanikov, Maks and Melzi, Simone},
+keywords = {Shape correspondence, Functional maps, Point clouds, Machine learning}}
 
 ---
 
