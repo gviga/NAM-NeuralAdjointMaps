@@ -3,7 +3,7 @@
 
 Official Repository for "NAM: Neural Adjoint Maps for refining shape correspondences"  
 Authors: Giulio Viganò, Maks Ovsjanikov, Simone Melzi.
-![Paper]([https://dl.acm.org/doi/10.1145/3730943](https://dl.acm.org/doi/10.1145/3730943))
+![Paper](https://dl.acm.org/doi/10.1145/3730943)
 
 
 ## Overview
