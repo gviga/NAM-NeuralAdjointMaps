@@ -3,7 +3,9 @@
 
 Official Repository for "NAM: Neural Adjoint Maps for refining shape correspondences"  
 Authors: Giulio Viganò, Maks Ovsjanikov, Simone Melzi.
-`paper <https://dl.acm.org/doi/10.1145/3730943>`_
+![Paper](https://dl.acm.org/doi/10.1145/3730943)
+
+
 ## Overview
 
 In this Repo, we implement and show Neural Adjoint Maps, a new functional representation of correspondences between shapes. This Repository does not replicate the results of the papers; stay tuned for additional material.
