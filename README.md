@@ -3,10 +3,14 @@
 
 Official Repository for "NAM: Neural Adjoint Maps for refining shape correspondences"  
 Authors: Giulio Viganò, Maks Ovsjanikov, Simone Melzi.
+Paper at https://dl.acm.org/doi/10.1145/3730943
+
 
 ## Overview
 
 In this Repo, we implement and show Neural Adjoint Maps, a new functional representation of correspondences between shapes. This Repository does not replicate the results of the papers; stay tuned for additional material.
+
+You can find Nam implemented also in Geomfum package at https://github.com/DiG-AIR/geomfum.
 
 ## Directory Structure
 ```
@@ -80,11 +84,28 @@ For further issues, please contact the authors.
 If you use this code, please cite:
 
 ```
-@article{vigano2024nam,
-  title={NAM: Neural Adjoint Maps for refining shape correspondences},
-  author={Viganò, Giulio and Ovsjanikov, Maks and Melzi, Simone},
-  year={2024}
+
+@article{vigano2025nam,
+author = {Vigan\`{o}, Giulio and Ovsjanikov, Maks and Melzi, Simone},
+title = {NAM: Neural Adjoint Maps for refining shape correspondences},
+year = {2025},
+issue_date = {August 2025},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {44},
+number = {4},
+issn = {0730-0301},
+url = {https://doi.org/10.1145/3730943},
+doi = {10.1145/3730943},
+abstract = {In this paper, we propose a novel approach to refine 3D shape correspondences by leveraging multi-layer perceptions within the framework of functional maps. Central to our contribution is the concept of Neural Adjoint Maps, a novel neural representation that generalizes the traditional solution of functional maps for estimating correspondence between manifolds. Fostering our neural representation, we propose an iterative algorithm explicitly designed to enhance the precision and robustness of shape correspondence across diverse modalities such as meshes and point clouds. By harnessing the expressive power of non-linear solutions, our method captures intricate geometric details and feature correspondences that conventional linear approaches often overlook. Extensive evaluations on standard benchmarks and challenging datasets demonstrate that our approach achieves state-of-the-art accuracy for both isometric and non-isometric meshes and for point clouds where traditional methods frequently struggle. Moreover, we show the versatility of our method in tasks such as signal and neural field transfer, highlighting its broad applicability to domains including computer graphics, medical imaging, and other fields demanding precise transfer of information among 3D shapes. Our work sets a new standard for shape correspondence refinement, offering robust tools across various applications.},
+journal = {ACM Trans. Graph.},
+month = jul,
+articleno = {60},
+numpages = {15},
+keywords = {shape matching, point cloud, machine learning}
 }
+
+
 
 ---
 
