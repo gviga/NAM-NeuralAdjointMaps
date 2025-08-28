@@ -82,9 +82,9 @@ class NeuralZoomOut(Refiner):
 
         emb2_nn = nam(embedding2[:, :k2])
         knn = NearestNeighbors(n_neighbors=1, algorithm="auto").fit(
-            embedding1[:, :k1].cpu().numpy()
+            emb2_nn.detach().cpu().numpy()
         )
-        distances, indices = knn.kneighbors(emb2_nn.detach().cpu().numpy())
+        distances, indices = knn.kneighbors(embedding1[:, :k1].cpu().numpy())
 
         p2p = indices.flatten()
 
